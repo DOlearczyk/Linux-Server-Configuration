@@ -138,17 +138,17 @@ If virtual host isn't running type: `sudo a2ensite catalog`
 
 ##Resources
 
-https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps
-http://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade
-http://askubuntu.com/questions/16650/create-a-new-ssh-user-on-ubuntu-server
-https://help.ubuntu.com/community/UFW
-http://askubuntu.com/questions/256013/could-not-reliably-determine-the-servers-fully-qualified-domain-name
-https://help.ubuntu.com/community/UbuntuTime
-http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/
-http://blog.udacity.com/2015/03/step-by-step-guide-install-lamp-linux-apache-mysql-python-ubuntu.html
-https://help.github.com/articles/set-up-git/#platform-linux
-https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
-http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible
+https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps  
+http://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade  
+http://askubuntu.com/questions/16650/create-a-new-ssh-user-on-ubuntu-server  
+https://help.ubuntu.com/community/UFW  
+http://askubuntu.com/questions/256013/could-not-reliably-determine-the-servers-fully-qualified-domain-name  
+https://help.ubuntu.com/community/UbuntuTime  
+http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/  
+http://blog.udacity.com/2015/03/step-by-step-guide-install-lamp-linux-apache-mysql-python-ubuntu.html  
+https://help.github.com/articles/set-up-git/#platform-linux  
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps  
+http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible  
 https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 
 
