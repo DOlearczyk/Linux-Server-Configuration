@@ -1,16 +1,16 @@
 # Linux-Server-Configuration
 Fifth project of Udacity's Full Stack Web Developer Nanodegree
 
-Server IP Address: 52.38.113.174
-SSH Port: 2200
+Server IP Address: 52.38.113.174  
+SSH Port: 2200  
 URL: http://52.38.113.174/
 
 # Configuration changes
 
-Added user grader: `adduser grader`
+Added user grader: `adduser grader`  
 Added user grader to sudoers: `sudo usermod -a -G sudo grader`
 
-Updated package indexes: `sudo apt-get update`
+Updated package indexes: `sudo apt-get update`  
 Upgraded installed packages: `sudo apt-get upgrade`
 
 Allow logging as grader by authorized_keys:
@@ -50,8 +50,8 @@ echo "ServerName HOSTNAME" | sudo tee /etc/apache2/conf-available/fqdn.conf
 sudo a2enconf fqdn
 ```
 
-Installed git: `sudo apt-get install git`
-Enabled mod_wsgi: `sudo a2enmod wsgi`
+Installed git: `sudo apt-get install git`  
+Enabled mod_wsgi: `sudo a2enmod wsgi`  
 Setup directories for catalog project on `/var/www` directory:
 ```
 sudo mkdir catalog
@@ -60,9 +60,9 @@ sudo mkdir catalog
 cd catalog
 sudo mkdir static templates
 ```
-Cloned my git: `git clone https://github.com/DOlearczyk/catalog.git project`
-Moved all project files to catalog directory `cp -r project/* /var/www/catalog/catalog`
-Deleted previous directory `rm -r project`
+Cloned my git: `git clone https://github.com/DOlearczyk/catalog.git project`  
+Moved all project files to catalog directory `cp -r project/* /var/www/catalog/catalog`  
+Deleted previous directory `rm -r project`  
 Made git directory web inaccessible by creating file .htaccess and pasting `RedirectMatch 404 /\.git` line:
 ```
 cd /var/www/catalog/
@@ -118,19 +118,19 @@ application.secret_key = 'Add your secret key
 Restarted apache: `sudo service apache2 restart`
 
 ##
-Installed PostgreSQL: `sudo apt-get install postgresql postgresql-contrib`
-Remote connections aren't allowed on default which I can see in `/etc/postgresql/9.3/main/pg_hba.conf` file
-Created linux user catalog: `sudo adduser catalog`
-Changed to postgres user: `sudo su postgres`
-Connected to database system: `psql`
-Created catalog user: `CREATE USER catalog WITH PASSWORD 'db-password';`
-Allowed him to create tables: `ALTER USER catalog CREATEDB;`
-Created catalog database with catalog user as owner: `CREATE DATABASE catalog WITH OWNER catalog;`
-Connected to catalog db: `\c catalog`
-Revoked all rights to db: `REVOKE ALL ON SCHEMA public FROM public;`
-Grant access to catalog dbv to catalog user: `GRANT ALL ON SCHEMA public TO catalog;
-Exit PostgreSQL `\q` and switch to previous user `exit`
-In project directory `/var/www/catalog/catalog/` I run `python database_setup.py` to create db schema and insert initial records
+Installed PostgreSQL: `sudo apt-get install postgresql postgresql-contrib`  
+Remote connections aren't allowed on default which I can see in `/etc/postgresql/9.3/main/pg_hba.conf` file  
+Created linux user catalog: `sudo adduser catalog`  
+Changed to postgres user: `sudo su postgres`  
+Connected to database system: `psql`  
+Created catalog user: `CREATE USER catalog WITH PASSWORD 'db-password';`  
+Allowed him to create tables: `ALTER USER catalog CREATEDB;`  
+Created catalog database with catalog user as owner: `CREATE DATABASE catalog WITH OWNER catalog;`  
+Connected to catalog db: `\c catalog`  
+Revoked all rights to db: `REVOKE ALL ON SCHEMA public FROM public;`  
+Grant access to catalog dbv to catalog user: `GRANT ALL ON SCHEMA public TO catalog;`  
+Exit PostgreSQL `\q` and switch to previous user `exit`  
+In project directory `/var/www/catalog/catalog/` I run `python database_setup.py` to create db schema and insert initial records.  
 Restarted apache: `sudo service apache2 restart`
 
 
