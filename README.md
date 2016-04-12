@@ -85,7 +85,7 @@ deactivate
 ```
 Renamed `project.py` to `__init__.py`, inserted Google and Facebook client secrets, changed engine used from SQLite to PostgreSQL and renamed user table to users since user is reserved word in PostgreSQL.
 
-Configured and enabled a new virtual host by creating config file `sudo nano /etc/apache2/sites-available/catalog.conf` and pasted in following code:
+Configured and enabled a new virtual host by creating config file `/etc/apache2/sites-available/catalog.conf` and pasted in following code:
 ```
 <VirtualHost *:80>
       ServerName 52.38.113.174
@@ -106,7 +106,7 @@ Configured and enabled a new virtual host by creating config file `sudo nano /et
 </VirtualHost>
 ```
 Enabled the virtual host: `sudo a2ensite catalog`  
-Moved to directory `cd /var/www/catalog`, created file `sudo nano catalog.wsgi`and pasted in following code:
+Moved to directory `/var/www/catalog`, created file `catalog.wsgi`and pasted in following code:
 ```
 #!/usr/bin/python
 import sys
