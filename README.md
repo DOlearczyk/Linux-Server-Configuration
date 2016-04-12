@@ -5,7 +5,7 @@ Server IP Address: 52.38.113.174
 SSH Port: 2200  
 URL: http://52.38.113.174/
 
-# Configuration changes
+# Software installed and configuration changes made
 
 Added user grader: `adduser grader`  
 Added user grader to sudoers: `sudo usermod -a -G sudo grader`
@@ -51,6 +51,8 @@ sudo a2enconf fqdn
 ```
 
 Installed git: `sudo apt-get install git`  
+Set git name: `git config --global user.name "MY NAME"`  
+Set git email address: `git config --global user.email "MY EMAIL ADDRESS"`  
 Enabled mod_wsgi: `sudo a2enmod wsgi`  
 Setup directories for catalog project on `/var/www` directory:
 ```
@@ -69,7 +71,7 @@ cd /var/www/catalog/
 sudo nano .htaccess
 RedirectMatch 404 /\.git
 ```
-Install project requirements using virtualenv with neccessary permissions. Also install PostgreSQL adapter psycopg since initial project used sqlite:
+Install project requirements using virtualenv with neccessary permissions. Also install PostgreSQL adapter psycopg since initial project used SQLite:
 ```
 cd /var/www/catalog/catalog/
 sudo apt-get install python-pip
@@ -103,7 +105,7 @@ Configured and enabled a new virtual host by creating config file `sudo nano /et
       CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
-Enabled the virtual host: `sudo a2ensite catalog`
+Enabled the virtual host: `sudo a2ensite catalog`  
 Moved to directory `cd /var/www/catalog`, created file `sudo nano catalog.wsgi`and pasted in following code:
 ```
 #!/usr/bin/python
@@ -113,7 +115,7 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/catalog/")
 
 from catalog import app as application
-application.secret_key = 'Add your secret key
+application.secret_key = 'Add your secret key'
 ```
 Restarted apache: `sudo service apache2 restart`
 
@@ -131,8 +133,23 @@ Revoked all rights to db: `REVOKE ALL ON SCHEMA public FROM public;`
 Grant access to catalog dbv to catalog user: `GRANT ALL ON SCHEMA public TO catalog;`  
 Exit PostgreSQL `\q` and switch to previous user `exit`  
 In project directory `/var/www/catalog/catalog/` I run `python database_setup.py` to create db schema and insert initial records.  
-Restarted apache: `sudo service apache2 restart`
+Restarted apache: `sudo service apache2 restart`  
+If virtual host isn't running type: `sudo a2ensite catalog`
 
+##Resources
+
+https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps
+http://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade
+http://askubuntu.com/questions/16650/create-a-new-ssh-user-on-ubuntu-server
+https://help.ubuntu.com/community/UFW
+http://askubuntu.com/questions/256013/could-not-reliably-determine-the-servers-fully-qualified-domain-name
+https://help.ubuntu.com/community/UbuntuTime
+http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/
+http://blog.udacity.com/2015/03/step-by-step-guide-install-lamp-linux-apache-mysql-python-ubuntu.html
+https://help.github.com/articles/set-up-git/#platform-linux
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible
+https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 
 
 
