@@ -136,7 +136,7 @@ In project directory `/var/www/catalog/catalog/` I run `python database_setup.py
 Restarted apache: `sudo service apache2 restart`  
 If virtual host isn't running type: `sudo a2ensite catalog`
 
-##Resources
+# Resources
 
 https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps  
 http://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade  
@@ -150,15 +150,3 @@ https://help.github.com/articles/set-up-git/#platform-linux
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps  
 http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible  
 https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
-
-
-
-
-
-
-
-
-
-
-
-
