@@ -13,7 +13,7 @@ Added user grader to sudoers: `sudo usermod -a -G sudo grader`
 Updated package indexes: `sudo apt-get update`  
 Upgraded installed packages: `sudo apt-get upgrade`
 
-Allow logging as grader by authorized_keys:
+Allowed logging as grader by authorized_keys:
 ```
 su - grader
 mkdir .ssh
@@ -71,7 +71,7 @@ cd /var/www/catalog/
 sudo nano .htaccess
 RedirectMatch 404 /\.git
 ```
-Install project requirements using virtualenv with neccessary permissions. Also install PostgreSQL adapter psycopg since initial project used SQLite:
+Installed project requirements using virtualenv with neccessary permissions. Also installed PostgreSQL adapter psycopg since initial project used SQLite:
 ```
 cd /var/www/catalog/catalog/
 sudo apt-get install python-pip
@@ -126,12 +126,12 @@ Created linux user catalog: `sudo adduser catalog`
 Changed to postgres user: `sudo su postgres`  
 Connected to database system: `psql`  
 Created catalog user: `CREATE USER catalog WITH PASSWORD 'db-password';`  
-Allowed him to create tables: `ALTER USER catalog CREATEDB;`  
+Allowed catalog user to create tables: `ALTER USER catalog CREATEDB;`  
 Created catalog database with catalog user as owner: `CREATE DATABASE catalog WITH OWNER catalog;`  
 Connected to catalog db: `\c catalog`  
 Revoked all rights to db: `REVOKE ALL ON SCHEMA public FROM public;`  
-Grant access to catalog dbv to catalog user: `GRANT ALL ON SCHEMA public TO catalog;`  
-Exit PostgreSQL `\q` and switch to previous user `exit`  
+Granted access to catalog db to catalog user: `GRANT ALL ON SCHEMA public TO catalog;`  
+Exited PostgreSQL `\q` and switched to previous user `exit`  
 In project directory `/var/www/catalog/catalog/` I run `python database_setup.py` to create db schema and insert initial records.  
 Restarted apache: `sudo service apache2 restart`  
 If virtual host isn't running type: `sudo a2ensite catalog`
